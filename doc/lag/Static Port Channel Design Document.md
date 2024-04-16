@@ -137,7 +137,7 @@ Note: Port Channels are dynamic by default in SONiC.
 Team Manager listens to Port Channel update events from the PORTCHANNEL and PORTCHANNEL_MEMBER table in CONFIG_DB. For the Static Port Channel add event it starts Teamd  with load-balance as the runner; whereas for the dynamic Port Channel Teammgr starts Teamd with lacp as the runner. 
 
 When static port-channel is configured then teammgr invokes teamd instance as follows
-root          27       1  0 Jun17 ?        00:01:10 /usr/bin/teamd -r -t PortChannel0001 -c {"device":"PortChannel0001","hwaddr":"00:e0:ec:7a:88:11","runner":{"name":"loadbalance","min_ports":1}} -L /var/warmboot/teamd/ -g -d
+root          27       1  0 Jun17 ?        00:01:10 /usr/bin/teamd -r -t PortChannel0001 -c {"device":"PortChannel0001","hwaddr":"00:e0:ec:7a:88:11","runner":{"name":"round-robin","min_ports":1}} -L /var/warmboot/teamd/ -g -d
 
 round-robin load-balancing is configured for the kernel interface port-channel.
 
